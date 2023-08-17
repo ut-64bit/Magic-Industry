@@ -1,0 +1,46 @@
+{
+  "itemGroup.createcasing": "Create: Encased",
+
+  "block.createcasing.brass_gearbox": "真鍮のギアボックス",
+  "block.createcasing.copper_gearbox": "銅のギアボックス",
+  "block.createcasing.railway_gearbox": "Trainギアボックス",
+  "block.createcasing.brass_mixer": "真鍮のミキサー",
+  "block.createcasing.copper_mixer": "銅のミキサー",
+  "block.createcasing.railway_mixer": "Trainミキサー",
+  "block.createcasing.brass_press": "真鍮のプレス",
+  "block.createcasing.copper_press": "銅のプレス",
+  "block.createcasing.railway_press": "Trainプレス",
+
+  "block.createcasing.brass_mixer.tooltip": "真鍮のミキサー",
+  "block.createcasing.brass_mixer.tooltip.summary" : "通常のミキサーより_2倍速く_加工できますが、_より多くの回転力を使用します_",
+  "block.createcasing.copper_mixer.tooltip": "銅のミキサー",
+  "block.createcasing.copper_mixer.tooltip.summary" : "_レシピが液体のみか、ポーションの場合_、通常のミキサーよりも_2倍速く加工_できますが、_より多くの回転力を使用します_",
+  "block.createcasing.railway_mixer.tooltip": "Trainミキサー",
+  "block.createcasing.railway_mixer.tooltip.summary" : "通常のミキサーより_2倍速く_加工できますが、_より多くの回転力を使用します_",
+
+
+
+  "item.createcasing.vertical_brass_gearbox": "真鍮の垂直ギアボックス",
+  "item.createcasing.vertical_copper_gearbox": "銅の垂直ギアボックス",
+  "item.createcasing.vertical_railway_gearbox": "Train垂直ギアボックス",
+  "item.createcasing.press_plate": "プレスプレート",
+
+  "createcasing.ponder.tag.encased_blocks": "Create: Encased",
+  "createcasing.ponder.tag.encased_blocks.description": "Create: Encasedで追加されたコンポーネント",
+
+  "createcasing.ponder.gearbox.header": "ギアボックスによる回転力の伝達",
+  "createcasing.ponder.gearbox.text_1": "回転軸の向きを変えようとすると、すぐに機構がかさばってしまいます",
+  "createcasing.ponder.gearbox.text_2": "これをコンパクトにしたものがギアボックスです",
+  "createcasing.ponder.gearbox.text_3": "直角に曲げて伝達すると、鏡写しの方向に回転します",
+  "createcasing.ponder.gearbox.text_4": "まっすぐ伝達すると回転方向が逆になります",
+	"createcasing.ponder.mechanical_mixer.header": "メカニカルミキサーによるアイテム加工",
+	"createcasing.ponder.mechanical_mixer.text_1": "ミキサーと鉢があれば、いくつかのクラフトレシピを自動化できます",
+	"createcasing.ponder.mechanical_mixer.text_2": "自動化できるのは不定形レシピといくつかの追加レシピです",
+	"createcasing.ponder.mechanical_mixer.text_3": "レシピの中には、ブレイズバーナーの熱を必要とするものもあります",
+	"createcasing.ponder.mechanical_mixer.text_4": "フィルタースロットは、2つのレシピが競合するときに使えます",
+	"createcasing.ponder.mechanical_press.header": "メカニカルプレスによるアイテム加工",
+	"createcasing.ponder.mechanical_press.text_1": "メカニカルプレスは、その下に配置したアイテムを加工できます",
+	"createcasing.ponder.mechanical_press.text_2": "加工するアイテムは下に落としたり、プレス機の下にあるデポに置いたりしてください",
+	"createcasing.ponder.mechanical_press.text_3": "アイテムがベルトで供給されると...",
+	"createcasing.ponder.mechanical_press.text_4": "...プレスが自動でアイテムを止め、加工します"
+}
