@@ -42,3 +42,9 @@
 	#Range: 7 ~ 16
 	"Block Range" = 7
 
+[Misc]
+	#The amount of temperature normalization from being deep underground
+	#0.0 = no insulation, 1.0 = full insulation
+	#Range: 0.0 ~ 1.0
+	"Cave Insulation Strength" = 1.0
+
