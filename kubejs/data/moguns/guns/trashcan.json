@@ -1,0 +1,33 @@
+{
+    "general": {
+        "rate": 100,
+        "gripType": "cgm:one_handed",
+        "maxAmmo": 1,
+        "reloadAmount": 17,
+        "recoilKick": 5,
+        "recoilAngle": 2,
+        "projectileAmount": 100,
+        "alwaysSpread": true,
+        "spread": 30
+    },
+    "projectile": {
+        "item": "moguns:garbage",
+        "visible": false,
+        "damage": 30,
+        "size": 0.5,
+        "speed": 3.0,
+        "life": 100,
+        "gravity": true
+    },
+    "sounds": {
+        "fire": "moguns:item.trashcan.boom",
+        "reload": "moguns:item.trashcan.reload"
+    },
+    "display": {
+        "flash": {
+            "yOffset": 11.75,
+            "zOffset": -10,
+            "size": 10
+        }
+    }
+}

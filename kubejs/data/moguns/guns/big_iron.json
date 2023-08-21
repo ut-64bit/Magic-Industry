@@ -1,0 +1,50 @@
+{
+    "general": {
+        "rate": 30,
+        "gripType": "cgm:two_handed",
+        "maxAmmo": 3,
+        "reloadAmount": 1,
+        "recoilKick": 1,
+        "recoilAngle": 50.0,
+        "recoilAdsReduction": 0.5,
+        "alwaysSpread": true,
+        "spread": 0.5
+    },
+    "projectile": {
+        "item": "minecraft:iron_block",
+        "visible": false,
+        "damage": 99,
+        "size": 1,
+        "speed": 0.5,
+        "life": 1000
+    },
+    "sounds": {
+        "fire": "moguns:item.big_iron.fire",
+        "reload": "moguns:item.m1_garand.ping",
+        "cock": "moguns:item.remington_870.cock",
+        "silencedFire": "cgm:item.pistol.silenced_fire"
+    },
+    "display": {
+        "flash": {
+            "yOffset": 3.3,
+            "zOffset": -16
+        }
+    },
+    "modules": {
+        "zoom": {
+            "fovModifier": 0.7,
+            "yOffset": 4.5
+        },
+        "attachments": {
+            "scope": {
+                "yOffset": 3.7,
+                "zOffset": 6.0,
+                "scale": 0.75
+            },
+            "stock": {
+                "yOffset": 3.3,
+                "zOffset": 7.95
+            }
+        }
+    }
+}

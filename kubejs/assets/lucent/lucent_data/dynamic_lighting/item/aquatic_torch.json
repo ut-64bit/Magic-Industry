@@ -1,0 +1,8 @@
+{
+	"id": "aquatictorches:aquatic_torch",
+	"light": {
+		"type": "lucent:match_block",
+		"block": "aquatictorches:aquatic_torch"
+	},
+	"works_underwater": true
+}

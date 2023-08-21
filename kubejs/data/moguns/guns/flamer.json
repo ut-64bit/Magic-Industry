@@ -1,0 +1,35 @@
+{
+    "general": {
+        "auto": true,
+        "rate": 1,
+        "gripType": "cgm:mini_gun",
+        "maxAmmo": 50,
+        "reloadAmount": 10,
+        "recoilKick": 0.25,
+        "recoilAngle": 1,
+        "projectileAmount": 2,
+        "alwaysSpread": true,
+        "spread": 3.0
+    },
+    "projectile": {
+        "item": "minecraft:magma_cream",
+        "visible": false,
+        "damage": 2,
+        "size": 0.2,
+        "speed": 2.0,
+        "gravity": true,
+        "life": 200
+    },
+    "sounds": {
+        "fire": "moguns:item.m2.fire",
+        "reload": "cgm:item.pistol.reload",
+        "cock": "moguns:item.m16a1.cock"
+    },
+    "display": {
+        "flash": {
+            "yOffset": 2,
+            "zOffset": -10,
+            "size": 1.5
+        }
+    }
+}
