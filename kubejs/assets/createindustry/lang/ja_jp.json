@@ -223,7 +223,7 @@
   "createindustry.ponder.diesel_engine_small.header": "ディーゼルエンジンを作る",
   "createindustry.ponder.small_engines.header": "ちっちゃいエンジンを作る",
   "createindustry.ponder.tag.oil": "石油関連の機械",
-  "createindustry.ponder.tag.oil.description": "Machines that mine, process or use crude oil and fluids created from it",
+  "createindustry.ponder.tag.oil.description": "原油および原油から生成される流体を採掘、加工、使用する機械",
   "block.createindustry.cut_bauxite": "ボーキサイトの切石",
   "block.createindustry.polished_cut_bauxite": "磨かれたボーキサイトの切石",
   "block.createindustry.cut_bauxite_brick": "ボーキサイトの切石レンガ",
