@@ -15,8 +15,9 @@
         "visible": false,
         "damage": 6.5,
         "size": 0.2,
-        "speed": 10.0,
-        "life": 20
+        "speed": 7.0,
+        "life": 10,
+        "gravity": false
     },
     "sounds": {
         "fire": "moguns:item.akm.fire",

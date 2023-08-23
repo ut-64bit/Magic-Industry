@@ -15,8 +15,8 @@
         "visible": false,
         "damage": 10,
         "size": 0.2,
-        "speed": 30.0,
-        "life": 30
+        "speed": 5.0,
+        "life": 5
     },
     "sounds": {
         "fire": "moguns:item.welrod.fire",
@@ -30,7 +30,7 @@
     },
     "modules": {
         "zoom": {
-            "fovModifier": 0.7,
+            "fovModifier": 1.0,
             "yOffset": 3.7
         }
     }

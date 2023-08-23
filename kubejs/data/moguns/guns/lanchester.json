@@ -15,9 +15,9 @@
         "visible": false,
         "damage": 4,
         "size": 0.2,
-        "speed": 7.0,
-        "life": 5,
-        "gravity": true
+        "speed": 6.0,
+        "life": 7,
+        "gravity": false
     },
     "sounds": {
         "fire": "moguns:item.lanchester.fire",

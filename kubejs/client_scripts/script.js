@@ -1,22 +1,17 @@
 // priority: 0
 
-// Visit the wiki for more info - https://kubejs.com/
-
-let removeCategory = [
-    "ad_astra:compressing",
-]
 JEIEvents.removeCategories(e => {
-    removeCategory.forEach(element => {
-        e.remove(element)
+    global.deleteRecipeType.forEach(element => {
+        e.remove(element);
     });
 })
 
-let hideItem = [
-    global.deleteItem,
-    'ad_astra:extinguished_torch',
-]
 JEIEvents.hideItems(e => {
-    hideItem.forEach(element => {
-        e.hide(element)
+    global.deleteItem.forEach(element => {
+        e.hide(element);
     });
+})
+
+ItemEvents.tooltip(tooltip => {
+    tooltip.add(global.deleteItem, Text.red("DELETED").underlined().italic())
 })
