@@ -7,7 +7,7 @@
 	#
 	# If enabled, torches and other vanilla fire-based items will not emit light underwater.
 	# Default: false
-	torchesDoNothingInWater = false
+	torchesDoNothingInWater = true
 	#
 	# The maximum amount of times light tries to refresh in a second. Higher values attempt to refresh more often. This number can be decreased if you experience poor performance.
 	# Default: 40

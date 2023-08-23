@@ -4,7 +4,6 @@
     "kubejs",
     "create",
     "immersiveengineering",
-    "alloyed",
     "createdeco"
   ],
   "stoneStrata": [
@@ -27,7 +26,8 @@
     "forge:rods/{material}",
     "forge:wires/{material}",
     "forge:storage_blocks/{material}",
-    "forge:storage_blocks/raw_{material}"
+    "forge:storage_blocks/raw_{material}",
+    "forge:coal_coke"
   ],
   "materials": [
     "aeternium",
@@ -37,6 +37,7 @@
     "bitumen",
     "brass",
     "bronze",
+    "cast_iron",
     "charcoal",
     "chrome",
     "cinnabar",
@@ -69,6 +70,7 @@
     "potassium_nitrate",
     "ruby",
     "sapphire",
+    "saltpeter",
     "signalum",
     "silver",
     "steel",
@@ -76,6 +78,7 @@
     "tin",
     "tungsten",
     "uranium",
+    "wood",
     "zinc"
   ],
   "priorityOverrides": {},

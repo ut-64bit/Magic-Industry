@@ -43,13 +43,18 @@
 	breakLeaves = true
 	#Non-decayable leaves are ignored when detecting leaves
 	ignorePersistentLeaves = true
-	#Maximum distance from log blocks to destroy non-standard leaves blocks (e.g. mushroom caps) when felling
+	#Maximum distance from log blocks to destroy leaves blocks when felling
 	#Range: 0 ~ 16
 	maxBreakLeavesDistance = 7
 
 	[treeDetection.logs]
 		#Blocks that should be considered choppable
-		#Specify using registry names (mod:block), tags (#mod:tag), and namespaces (@mod)
+		#For block lists, specify using registry names (mod:block), tags (#mod:tag), namespaces (@mod), and Java-style regular expressions
+		#Regular expressions must match the whole resource name, including the colon. Some simple examples are:
+		# - To match any block ending in _log: ".*_log", where .* is a wildcard
+		# - You can also specify a mod: "treemod:.*_log"
+		# - To also match stripped versions: ".*_log(_stripped)?", where ? means that the text in the parenthesis is optional
+		#For more help, see https://github.com/hammertater/treechop/wiki/Configuration
 		blocks = ["#treechop:choppables", "#minecraft:logs", "#forge:mushroom_stems"]
 		#Blocks that should never be chopped, even if included in the list above
 		#Specify using registry names (mod:block), tags (#mod:tag), and namespaces (@mod)
@@ -89,8 +94,6 @@
 		baseNumChops = 0.0
 
 [compatibility]
-	#Better chopping behavior for block with the #forge:mushroom_stems tag
-	mushroomStems = true
 	#https://www.curseforge.com/minecraft/mc-mods/carry-on
 	#https://modrinth.com/mod/carry-on
 	#Small fixes.
@@ -103,6 +106,12 @@
 	#https://modrinth.com/mod/the-one-probe
 	#Shows the number of chops required to fell a tree and what loot will drop.
 	theOneProbe = true
+	#https://github.com/TerraformersMC
+	#Fixes starting chop radius for small logs from Terraformers mods (Terrestria, etc.)
+	terraformers = true
+	#https://github.com/AtomicStryker/atomicstrykers-minecraft-mods
+	#Fixes bad behavior
+	multiMine = true
 
 	[compatibility.general]
 		#Only chop when using the correct tool for drops, if any (does nothing in vanilla, but some mods add tool requirements to logs
@@ -157,4 +166,25 @@
 	[compatibility.API]
 		#Log information about TreeChop API usage. May be useful for debugging mod compatibility issues.
 		verbose = false
+
+	#A set of alternate tree detection strategies for oddly shaped trees
+	#For block lists, specify using registry names (mod:block), tags (#mod:tag), namespaces (@mod), and Java-style regular expressions
+	#Regular expressions must match the whole resource name, including the colon. Some simple examples are:
+	# - To match any block ending in _log: ".*_log", where .* is a wildcard
+	# - You can also specify a mod: "treemod:.*_log"
+	# - To also match stripped versions: ".*_log(_stripped)?", where ? means that the text in the parenthesis is optional
+	#For more help, see https://github.com/hammertater/treechop/wiki/Configuration
+	[compatibility.trees]
+
+		[compatibility.trees.hugeMushrooms]
+			logs = ["#forge:mushroom_stems"]
+			leaves = ["#forge:mushroom_caps"]
+
+		[compatibility.trees.hugeFungi]
+			logs = ["#minecraft:crimson_stems", "#minecraft:warped_stems"]
+			leaves = ["#minecraft:wart_blocks", "minecraft:shroomlight"]
+
+		[compatibility.trees.problematicLeavesTrees]
+			logs = ["tropicraft:.*_log(_.*)?", "mysticbiomes:.*_log", "betternether:.*_bark", "betternether:.*_log"]
+			leaves = ["tropicraft:.*_leaves(_.*)?", "betternether:.*_leaves"]
 

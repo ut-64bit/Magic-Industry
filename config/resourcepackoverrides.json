@@ -1,0 +1,40 @@
+{
+    "schema_version": 1,
+    "failed_reloads_per_session": 5,
+    "default_packs": [
+        "file/Smarter Chutes 1.19.2.zip",
+        "file/Updated_Engineering_v1.7.zip",
+        "file/Create Immersive Aircrafts Resource Pack 1.19.2 - 1.2.zip",
+        "file/Create_Styled_AdAstra_Plates.zip",
+        "file/Lopy-Create-Sophisticated-Backpacks.zip"
+    ],
+    "default_overrides": {
+        "force_compatible": true
+    },
+    "pack_overrides": {
+        "vanilla": {
+            "title": "\"Vanilla Assets\"",
+            "description": "\"Resource pack from Minecraft\""
+        },
+        "server": {
+            "default_position": "BOTTOM",
+            "force_compatible": true,
+            "fixed_position": false
+        },
+        "mod_resources": {
+            "title": "\"Mod Assets\"",
+            "description": "\"Resource pack from Mods\""
+        },
+        "default_packs": [
+            "file/Smarter Chutes 1.19.2.zip",
+            "file/Updated_Engineering_v1.7.zip",
+            "file/Create Immersive Aircrafts Resource Pack 1.19.2 - 1.2.zip",
+            "file/Create_Styled_AdAstra_Plates.zip",
+            "file/Lopy-Create-Sophisticated-Backpacks.zip"
+        ],
+        "$default_packs": {
+            "hidden": true,
+            "required": true
+        }
+    }
+}

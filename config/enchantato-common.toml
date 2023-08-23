@@ -1,0 +1,5 @@
+
+#Enchantato
+[General]
+	"enchantments that will be forbidden" = ["cgm:quick_hands", "cgm:accelerator", "cgm:collateral", "cgm:fire_starter", "cgm:lightweight", "cgm:over_capacity", "cgm:reclaimed", "cgm:puncturing", "cgm:trigger_finger"]
+
