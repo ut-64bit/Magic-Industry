@@ -1,0 +1,14 @@
+{
+    "mob_id": "minecraft:spider",
+    "attributes": [
+        {
+            "id": "minecraft:generic.movement_speed",
+            "modifier_name": "Speed",
+            "amount": {
+                "min": 0.1,
+                "max": 0.2
+            },
+            "operation": "multiply_base"
+        }
+    ]
+}

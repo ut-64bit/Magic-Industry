@@ -1,0 +1,29 @@
+{
+	"target": "minecraft:zombie",
+	"attributes": [
+		{
+			"id": "minecraft:generic.movement_speed",
+			"modifier_name": "Speedy Zombies",
+			"amount": {
+				"min": 0.03,
+				"max": 0.15
+			},
+			"operation": "multiply_base"
+		},
+		{
+			"id": "minecraft:generic.armor",
+			"modifier_name": "Base armor for Zombies",
+			"amount": {
+				"min": 2,
+				"max": 4,
+				"difficulty_modifier": {
+					"operation": "add",
+					"easy": -1,
+					"normal": 0,
+					"hard": 2
+				}
+			},
+			"operation": "addition"
+		}
+	]
+}

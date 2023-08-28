@@ -71,4 +71,6 @@ buttonAlignment = "RIGHT"
 		#A value to multiple the mouse sensitivity by when aiming down weapon sights. Go to (Options > Controls > Mouse Settings > ADS Sensitivity) in game to change this!
 		#Range: 0.0 ~ 1.0
 		aimDownSightSensitivity = 0.75
+		#When enabled, switches the shoot and aim controls of weapons. Due to technical reasons, you won't be able to use offhand items if you enable this setting.
+		flipControls = false
 

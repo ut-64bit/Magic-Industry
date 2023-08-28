@@ -1,0 +1,45 @@
+{
+	"target": "minecraft:creeper",
+	"attributes": [
+		{
+			"id": "minecraft:generic.knockback_resistance",
+			"modifier_name": "KnockbackResistance",
+			"amount": {
+				"min": 0.0,
+				"max": 0.3,
+				"difficulty_modifier": {
+					"operation": "add",
+					"normal": 0.2,
+					"hard": 0.4
+				}
+			},
+			"operation": "addition"
+		},
+		{
+			"id": "minecraft:generic.movement_speed",
+			"modifier_name": "Speed",
+			"amount": {
+				"value": 0.03,
+				"difficulty_modifier": {
+					"operation": "add",
+					"normal": 0.01,
+					"hard": 0.02
+				}
+			},
+			"operation": "addition"
+		}
+	],
+	"presets": {
+		"chance": 0.3,
+		"list": [
+			{
+				"weight": 3,
+				"id": "mobs_properties:creeper/quick"
+			},
+			{
+				"weight": 3,
+				"id": "mobs_properties:creeper/knock"
+			}
+		]
+	}
+}

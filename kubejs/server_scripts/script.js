@@ -1,10 +1,10 @@
-// priority: 0
+// priority: 1
 
 /**
  * @type {Internal.Ingredient_[]}
  */
 global.deleteItem = [
-	/createdeco:.*_slab_vert/,
+	/^createdeco:.*_slab_vert$/,
 	"ad_astra:hammer",
 	"ad_astra:compressor",
 	"ad_astra:coal_generator",
@@ -24,45 +24,34 @@ global.deleteRecipeType = [
 	"cgm:workbench",
 ]
 
+/**
+ * @type {Special.Enchantment[]}
+ */
+const deleteEnchantType = [
+	"cgm:quick_hands",
+	"cgm:accelerator",
+	"cgm:collateral",
+	"cgm:fire_starter",
+	"cgm:lightweight",
+	"cgm:over_capacity",
+	"cgm:reclaimed",
+	"cgm:puncturing",
+	"cgm:trigger_finger"
+]
+
+
 ServerEvents.recipes(e => {
 	const { minecraft, create, immersiveengineering } = e.recipes;
-
-	/**
-	 * @param {Internal.ItemStack_} output
-	 * @param {Internal.ItemStack_} input
-	 * @param {object} options
-	 * @param {number} options.energy
-	 * @param {string} options.id
-	 */
-	let charging = (output, input, options) => {
-		const _options = {
-			energy: 10000,
-			id: null
-		};
-		Object.assign(_options, options)
-
-		if (typeof output == "string" && Item.exists(output))
-			output = Item.of(output);
-		else if (typeof output != "Internal.ItemStack_") return
-		if (typeof input == "string" && Item.exists(input))
-			input = Item.of(input);
-		else if (typeof input != "Internal.ItemStack_") return
-
-		if (_options.id == null)
-			return e.custom({ type: "createaddition:charging", input: input.toJson(), result: output.toJson(), energy: _options.energy })
-
-		return e.custom({ type: "createaddition:charging", input: input.toJson(), result: output.toJson(), energy: _options.energy }).id(_options.id)
-	};
+	const { createaddition, } = global.recipes;
 
 	// 松明
-	e.remove({ id: "realistictorches:unlit_torch" })
 	e.replaceOutput({ id: "immersiveengineering:crafting/torch" }, "minecraft:torch", "realistictorches:unlit_torch")
 	e.replaceOutput({ id: "delightful:torch_from_animal_oil_bottle" }, "minecraft:torch", "realistictorches:unlit_torch")
 	e.replaceOutput({ id: "minecraft:torch" }, "minecraft:torch", "realistictorches:unlit_torch")
 
 	// adastraの松明
 	e.remove({ id: "ad_astra:recipes/soul_torch" })
-	e.shaped("minecraft:soul_torch", [
+	minecraft.crafting_shaped("minecraft:soul_torch", [
 		"S",
 		"I"
 	], {
@@ -72,23 +61,23 @@ ServerEvents.recipes(e => {
 
 	// enigmaticunity:bright_source_generator
 	e.remove({ id: "enigmaticunity:bright_source_generator" })
-	charging("enigmaticunity:bright_source_generator", "enigmaticunity:dim_source_generator", { energy: 10000, id: "enigmaticunity:bright_source_generator" })
+	createaddition.charging(e, "enigmaticunity:bright_source_generator", "enigmaticunity:dim_source_generator", 10000, "enigmaticunity:bright_source_generator")
 
 	// enigmaticunity:iridescent_source_generator
 	e.remove({ id: "enigmaticunity:iridescent_source_generator" })
-	charging("enigmaticunity:iridescent_source_generator", "enigmaticunity:bright_source_generator", { energy: 20000, id: "enigmaticunity:iridescent_source_generator" })
+	createaddition.charging(e, "enigmaticunity:iridescent_source_generator", "enigmaticunity:bright_source_generator", 20000, "enigmaticunity:iridescent_source_generator")
 
 	// enigmaticunity:bright_source_producer
 	e.remove({ id: "enigmaticunity:bright_source_producer" })
-	charging("enigmaticunity:bright_source_producer", "enigmaticunity:dim_source_producer", { energy: 10000, id: "enigmaticunity:bright_source_producer" })
+	createaddition.charging(e, "enigmaticunity:bright_source_producer", "enigmaticunity:dim_source_producer", 10000, "enigmaticunity:bright_source_producer")
 
 	// enigmaticunity:iridescent_source_producer
 	e.remove({ id: "enigmaticunity:iridescent_source_producer" })
-	charging("enigmaticunity:iridescent_source_producer", "enigmaticunity:bright_source_producer", { energy: 20000, id: "enigmaticunity:iridescent_source_producer" })
+	createaddition.charging(e, "enigmaticunity:iridescent_source_producer", "enigmaticunity:bright_source_producer", 20000, "enigmaticunity:iridescent_source_producer")
 
 	// createindustry:sawdust_block
 	e.remove({ id: "createindustry:compacting/sawdust_block" })
-	e.shaped("createindustry:sawdust_block", [
+	minecraft.crafting_shaped("createindustry:sawdust_block", [
 		"##",
 		"##"
 	], {
@@ -104,45 +93,74 @@ ServerEvents.recipes(e => {
 	e.remove({ id: "aquatictorches:aquatic_torch" })
 	e.shapeless("aquatictorches:aquatic_torch", ["realistictorches:lit_torch", "minecraft:glow_ink_sac"])
 
-	// ad_astra:engine_fan
-	e.remove({ id: "ad_astra:recipes/engine_fan" })
-	create.mechanical_crafting("ad_astra:engine_fan", [
-		" P ",
-		"PSP",
-		" P "
+	// radar
+	minecraft.crafting_shaped("kubejs:radar", [
+		"PPP",
+		"ECE",
+		"PMP"
 	], {
 		"P": "#forge:plates/steel",
-		"S": "#forge:ingots/steel"
-	}).id("ad_astra:mechanical_crafting/engine_fan")
+		"P": 'meetyourfight:phantoplasm',
+		"E": 'immersiveengineering:electron_tube',
+		"C": 'compass',
+		"M": 'create:precision_mechanism'
+	}).id("kubejs:crafting/radar")
 
-	// ad_astra:rocket_nose_cone
-	e.remove({ id: "ad_astra:recipes/rocket_nose_cone" })
-	create.mechanical_crafting("ad_astra:rocket_nose_cone", [
-		" I ",
-		" S ",
-		"SBS"
-	], {
-		"I": "minecraft:lightning_rod",
-		"S": "#forge:ingots/steel",
-		"B": "#forge:storage_block/steel"
-	}).id("ad_astra:mechanical_crafting/rocket_nose_cone")
+	// immersive_aircraft
+	{
+		e.remove({ id: "immersive_aircraft:improved_landing_gear" })
+		minecraft.crafting_shaped("immersive_aircraft:improved_landing_gear", [
+			"PI",
+			"W "
+		], {
+			"I": "#forge:ingots/iron",
+			"P": "#forge:plates/iron",
+			"W": "ad_astra:wheel"
+		}).id("immersive_aircraft:crafting/improved_landing_gear")
+	}
 
-	// ad_astra:engine_frame
-	e.replaceInput({ id: "ad_astra:recipes/engine_frame" }, "#forge:rods/iron", "#forge:rods/steel")
+	// ad_astra
+	{
+		// ad_astra:engine_fan
+		e.remove({ id: "ad_astra:recipes/engine_fan" })
+		create.mechanical_crafting("ad_astra:engine_fan", [
+			" P ",
+			"PSP",
+			" P "
+		], {
+			"P": "#forge:plates/steel",
+			"S": "#forge:ingots/steel"
+		}).id("ad_astra:mechanical_crafting/engine_fan")
 
-	// wheel_rugaer
-	create.mixing("3x kubejs:wheel_rubber", ["3x myrtrees:latex", "#forge:dusts/sulfur", "2x #forge:dusts/hop_graphite"]).id("kubejs:mixing/wheel_rubber")
+		// ad_astra:rocket_nose_cone
+		e.remove({ id: "ad_astra:recipes/rocket_nose_cone" })
+		create.mechanical_crafting("ad_astra:rocket_nose_cone", [
+			" I ",
+			" S ",
+			"SBS"
+		], {
+			"I": "minecraft:lightning_rod",
+			"S": "#forge:ingots/steel",
+			"B": "#forge:storage_block/steel"
+		}).id("ad_astra:mechanical_crafting/rocket_nose_cone")
 
-	// ad_astra:wheel
-	e.remove({ id: "ad_astra:recipes/wheel" })
-	e.shaped("ad_astra:wheel", [
-		"###",
-		"#S#",
-		"###"
-	], {
-		"#": "kubejs:wheel_rubber",
-		"S": "#forge:plates/steel"
-	}).id("ad_astra:crafting/wheel")
+		// ad_astra:engine_frame
+		e.replaceInput({ id: "ad_astra:recipes/engine_frame" }, "#forge:rods/iron", "#forge:rods/steel")
+
+		// wheel_rugaer
+		create.mixing("3x kubejs:wheel_rubber", ["3x myrtrees:latex", "#forge:dusts/sulfur", "2x #forge:dusts/hop_graphite"]).id("kubejs:mixing/wheel_rubber")
+
+		// ad_astra:wheel
+		e.remove({ id: "ad_astra:recipes/wheel" })
+		minecraft.crafting_shaped("ad_astra:wheel", [
+			"###",
+			"#S#",
+			"###"
+		], {
+			"#": "kubejs:wheel_rubber",
+			"S": "#forge:plates/steel"
+		}).id("ad_astra:crafting/wheel")
+	}
 
 	// 削除関連
 	{
@@ -209,7 +227,7 @@ LootJS.modifiers(event => {
 
 	event.addEntityLootModifier("meetyourfight:swampjaw").pool(pool => {
 		pool.rolls(1)
-		pool.addWeightedLoot([1, 1, 1], [LootEntry.of("immersiveengineering:blueprint", '{blueprint:"baker_rifle"}'), LootEntry.of("immersiveengineering:blueprint", '{blueprint:"walther_ppk"}'), LootEntry.of("immersiveengineering:blueprint", '{blueprint:"lanchester"}')])
+		pool.addWeightedLoot([LootEntry.of("immersiveengineering:blueprint", '{blueprint:"baker_rifle"}'), LootEntry.of("immersiveengineering:blueprint", '{blueprint:"walther_ppk"}'), LootEntry.of("immersiveengineering:blueprint", '{blueprint:"lanchester"}')])
 	})
 	//event.addEntityLootModifier("meetyourfight:bellringer")
 	//event.addEntityLootModifier("meetyourfight:dame_fortuna")
@@ -226,6 +244,9 @@ BlockEvents.rightClicked("ad_astra:extinguished_torch", e => {
 	e.cancel()
 })
 
-EntityEvents.death("meetyourfight:swampjaw", e => {
-	e.entity.playSound("minecraft:entity.generic.explode")
+MoreJSEvents.filterEnchantedBookTrade(e => {
+	e.remove(deleteEnchantType)
+})
+MoreJSEvents.filterAvailableEnchantments(e => {
+	e.remove(deleteEnchantType)
 })

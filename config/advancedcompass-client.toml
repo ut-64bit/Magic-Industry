@@ -37,7 +37,7 @@
 	autoDeathWaypoint = true
 	#Compass show mode
 	#Allowed Values: OFF, ALWAYS_ON, MAIN_HAND, BOTH_HANDS, ANY_SLOT
-	showMode = "ALWAYS_ON"
+	showMode = "ANY_SLOT"
 	#Hide mob icons if they are behind blocks
 	hideBehindBlocks = false
 	#Show coordinates

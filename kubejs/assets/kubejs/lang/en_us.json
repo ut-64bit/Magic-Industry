@@ -1,0 +1,11 @@
+{
+	"item.kubejs.radar": "Radar",
+	"item.kubejs.radar.tooltip": "RADAR",
+	"item.kubejs.radar.tooltip.summary": "When this item is in the hotbar, a mini-map is available.",
+	"item.kubejs.radar.tooltip.condition1": "condition1",
+	"item.kubejs.radar.tooltip.behaviour1": "behaviour1",
+	"item.kubejs.radar.tooltip.control1": "control1",
+	"item.kubejs.radar.tooltip.action1": "action1",
+	"item.kubejs.wheel_rubber": "Wheel Rubber",
+	"item.kubejs.fire_stick": "Fire Stick"
+}

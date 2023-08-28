@@ -7,16 +7,17 @@
   "fuelConsumption": 1.0,
   "windClearWeather": 1.0,
   "windRainWeather": 3.0,
-  "windThunderWeather": 3.0,
+  "windThunderWeather": 5.0,
   "collisionDamage": true,
-  "onlyPlayerCanDestroyAircraft": true,
+  "onlyPlayerCanDestroyAircraft": false,
   "burnFuelInCreative": false,
   "acceptVanillaFuel": true,
   "useCustomKeybindSystem": true,
   "crashDamage": 2.0,
   "preventKillThroughCrash": true,
   "fuelList": {
-    "minecraft:blaze_powder": 1200
+    "minecraft:blaze_powder": 1200,
+    "createindustry:gasoline_bucket": 48000
   },
   "version": 1
 }
